@@ -8,66 +8,79 @@ while true; do
   echo "║        🚀 ГЛАВНОЕ МЕНЮ ВСЕХ СКРИПТОВ      ║"
   echo "╚════════════════════════════════════════════╝"
   echo ""
+  echo "📚 СПРАВОЧНИК:"
+  echo "  0) 📖 Справочник команд Bash            [bash_help.sh]"
+  echo ""
   echo "📂 BASH СКРИПТЫ:"
-  echo "  1) 🌤️  Погода"
-  echo "  2) 💾 Информация о системе"
-  echo "  3) ⏱️  Таймер"
-  echo "  4) 💡 Мотивирующая цитата"
-  echo "  5) 📁 Открыть проекты"
-  echo "  6) 🧹 Очистить мусор"
-  echo "  7) 🔍 Поиск языков программирования"
+  echo "  1) 🌤️  Погода                   [weather.sh]"
+  echo "  2) 💾 Информация о системе      [sysinfo.sh]"
+  echo "  3) ⏱️  Таймер                   [timer.sh]"
+  echo "  4) 💡 Мотивирующая цитата      [quote.sh]"
+  echo "  5) 📁 Открыть проекты          [projects.sh]"
+  echo "  6) 🧹 Очистить мусор           [cleanup.sh]"
+  echo "  7) 🔍 Поиск языков программирования [find_languages.sh]"
   echo ""
   echo "🐍 PYTHON СКРИПТЫ:"
-  echo "  8) 🎉 Hello World"
-  echo "  9) 🧮 Калькулятор"
-  echo "  10) 📊 Демо списков"
-  echo "  11) 📝 Демо файлов"
-  echo "  12) 🎯 Менеджер задач"
+  echo "  8) 🎉 Hello World               [hello.py]"
+  echo "  9) 🧮 Калькулятор              [calculator.py]"
+  echo "  10) 📊 Демо списков            [list_demo.py]"
+  echo "  11) 📝 Демо файлов             [file_demo.py]"
+  echo "  12) 🎯 Менеджер задач (Python) [tasks.py]"
   echo ""
-  echo "  0) ❌ Выход"
+  echo "💎 RUBY СКРИПТЫ:"
+  echo "  13) 🎉 Hello World              [hello.rb]"
+  echo "  14) 🎯 ToDo список              [todo.rb]"
+  echo "  15) 💡 Случайная цитата        [quote.rb]"
   echo ""
-  read -p "Выбери опцию (0-12): " choice
+  echo "☕ JAVA СКРИПТЫ:"
+  echo "  16) 🎉 Hello World              [HelloWorld.java]"
+  echo "  17) 🧮 Калькулятор             [Calculator.java]"
+  echo "  18) 🖥️  Информация о системе    [SystemInfo.java]"
+  echo ""
+  echo "  99) ❌ Выход"
+  echo ""
+  read -p "Выбери опцию (0-18 или 99): " choice
 
   case $choice in
-    1) 
-      echo "🌤️  Загружаю погоду..."
-      sleep 1
-      ~/weather.sh
+    # Справочник
+    0) ~/bash_help.sh ;;
+    
+    # BASH скрипты
+    1) ~/weather.sh ;;
+    2) ~/sysinfo.sh ;;
+    3) ~/timer.sh ;;
+    4) ~/quote.sh ;;
+    5) ~/projects.sh ;;
+    6) ~/cleanup.sh ;;
+    7) ~/find_languages.sh ;;
+    
+    # PYTHON скрипты
+    8) python3 ~/hello.py ;;
+    9) python3 ~/calculator.py ;;
+    10) python3 ~/list_demo.py ;;
+    11) python3 ~/file_demo.py ;;
+    12) python3 ~/tasks.py ;;
+    
+    # RUBY скрипты
+    13) ruby ~/hello.rb ;;
+    14) ruby ~/todo.rb ;;
+    15) ruby ~/quote.rb ;;
+    
+    # JAVA скрипты
+    16) 
+      javac ~/HelloWorld.java 2>/dev/null
+      java -cp ~ HelloWorld
       ;;
-    2) 
-      ~/sysinfo.sh
+    17) 
+      javac ~/Calculator.java 2>/dev/null
+      java -cp ~ Calculator
       ;;
-    3) 
-      ~/timer.sh
+    18) 
+      javac ~/SystemInfo.java 2>/dev/null
+      java -cp ~ SystemInfo
       ;;
-    4) 
-      ~/quote.sh
-      ;;
-    5) 
-      ~/projects.sh
-      ;;
-    6) 
-      ~/cleanup.sh
-      ;;
-    7) 
-      ~/find_languages.sh
-      ;;
-    8) 
-      python3 ~/hello.py
-      ;;
-    9) 
-      python3 ~/calculator.py
-      ;;
-    10) 
-      python3 ~/list_demo.py
-      ;;
-    11) 
-      python3 ~/file_demo.py
-      ;;
-    12) 
-      python3 ~/tasks.py
-      ;;
-    0) 
+    
+    99) 
       echo ""
       echo "👋 Спасибо за использование! До свидания!"
       echo ""
@@ -80,5 +93,5 @@ while true; do
   esac
 
   echo ""
-  read -p "��ажми Enter для возврата в меню..."
+  read -p "Нажми Enter для возврата в меню..."
 done
