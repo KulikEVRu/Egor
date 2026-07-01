@@ -37,9 +37,17 @@ while true; do
   echo "  17) 🧮 Калькулятор             [Calculator.java]"
   echo "  18) 🖥️  Информация о системе    [SystemInfo.java]"
   echo ""
+  echo "🔧 C И C++ СКРИПТЫ:"
+  echo "  19) 🎉 Hello World (C)          [hello.c]"
+  echo "  20) 🧮 Калькулятор (C)          [calc.c]"
+  echo "  21) 🎉 Hello World (C++)        [hello.cpp]"
+  echo "  22) 🎓 Классы и объекты (C++)   [student.cpp]"
+  echo "  23) 📊 Работа с массивами (C++) [array.cpp]"
+  echo "  24) 🔨 Компилятор C/C++         [compile.sh]"
+  echo ""
   echo "  99) ❌ Выход"
   echo ""
-  read -p "Выбери опцию (0-18 или 99): " choice
+  read -p "Выбери опцию (0-24 или 99): " choice
 
   case $choice in
     # Справочник
@@ -79,6 +87,38 @@ while true; do
       javac ~/SystemInfo.java 2>/dev/null
       java -cp ~ SystemInfo
       ;;
+    
+    # C скрипты
+    19)
+      gcc-16 ~/hello.c -o ~/hello_c
+      ~/hello_c
+      rm ~/hello_c
+      ;;
+    20)
+      gcc-16 ~/calc.c -o ~/calc_exe
+      ~/calc_exe
+      rm ~/calc_exe
+      ;;
+    
+    # C++ скрипты
+    21)
+      g++-16 ~/hello.cpp -o ~/hello_cpp
+      ~/hello_cpp
+      rm ~/hello_cpp
+      ;;
+    22)
+      g++-16 ~/student.cpp -o ~/student_exe
+      ~/student_exe
+      rm ~/student_exe
+      ;;
+    23)
+      g++-16 ~/array.cpp -o ~/array_exe
+      ~/array_exe
+      rm ~/array_exe
+      ;;
+    
+    # Компилятор
+    24) ~/compile.sh ;;
     
     99) 
       echo ""
